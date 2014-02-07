@@ -1,0 +1,16 @@
+<% @page_title = "Edit Editor" %>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="editors edit">
+  <h2>Edit Editor</h2>
+
+  <%= form_for(:editor, :url => {:action => 'update', :id => @editor.id }) do |f| %>
+
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Edit Editor") %>
+    </div>
+
+  <% end %>
+</div>
