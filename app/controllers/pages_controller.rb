@@ -26,6 +26,7 @@ class PagesController < ApplicationController
       flash[:notice] = "Page created successfully."
       redirect_to(:action => 'index', :subject_id => @subject.id)
     else
+      @subjects = Subject.sorted
       @page_count = Page.count + 1
       render('new')
     end
